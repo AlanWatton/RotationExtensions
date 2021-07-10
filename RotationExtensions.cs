@@ -4,15 +4,13 @@ public static class RotationExtensions
 {
     public static Quaternion ClampRotationAroundXAxis(this Quaternion q)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
-
-
         q.y = 0f;
         q.z = 0f;
 
@@ -21,11 +19,11 @@ public static class RotationExtensions
 
     public static Quaternion ClampRotationAroundYAxis(this Quaternion q)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
 
@@ -37,11 +35,11 @@ public static class RotationExtensions
 
     public static Quaternion ClampRotationAroundZAxis(this Quaternion q)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
 
@@ -51,13 +49,13 @@ public static class RotationExtensions
         return q;
     }
 
-    public static Quaternion ClampRotationXAxis(this Quaternion q, float min, float max)
+    public static Quaternion ClampRotationXAxis(this Quaternion q, float min, float max, bool clampAroundAxis = true)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
 
@@ -70,13 +68,13 @@ public static class RotationExtensions
         return q;
     }
 
-    public static Quaternion ClampRotationYAxis(this Quaternion q, float min, float max)
+    public static Quaternion ClampRotationYAxis(this Quaternion q, float min, float max, bool clampAroundAxis = true)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
 
@@ -89,13 +87,13 @@ public static class RotationExtensions
         return q;
     }
 
-    public static Quaternion ClampRotationZAxis(this Quaternion q, float min, float max)
+    public static Quaternion ClampRotationZAxis(this Quaternion q, float min, float max, bool clampAroundAxis = true)
     {
-        if (q.w != 0f)
+        if (!Mathf.Approximately(q.w, 0f))
         {
-            q.x /= q.w;
-            q.y /= q.w;
-            q.z /= q.w;
+            q.x = !Mathf.Approximately(q.x, 0f) ? q.x /= q.w : q.x;
+            q.y = !Mathf.Approximately(q.y, 0f) ? q.y /= q.w : q.y;
+            q.z = !Mathf.Approximately(q.z, 0f) ? q.z /= q.w : q.z;
             q.w = 1f;
         }
 
